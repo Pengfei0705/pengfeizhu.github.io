@@ -1,265 +1,450 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人网页</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        .navbar {
-            background-color: grey;
-            padding: 10px 0;
-        }
-        .nav-menu {
-            list-style-type: none;
-            margin: 0 auto;
-            padding: 0;
-            display: flex;
-            justify-content: space-between;
-            max-width: 1200px;
-        }
-        .nav-item {
-            margin: 0 15px;
-        }
-        .nav-item a {
-            text-decoration: none;
-            color: black;
-            font-size: 28px;
-            padding: 15px 40px;
-            display: block;
-        }
-        .nav-item a:hover {
-            background-color: white;
-        }
-        .image-gallery {
-            display: flex;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 20px auto;
-        }
-        .image-gallery img {
-            width: 24%;
-            height: auto;
-        }
-        .content-wrapper {
-            display: flex;
-            max-width: 1200px;
-            margin: 20px auto;
-        }
-        .left-sidebar {
-            width: 25%; /* 设置左侧侧边栏的固定宽度 */
-            background-color: #f4f4f4;
-            padding: 20px;
-            text-align: center;
-        }
-        .main-content {
-            flex: 1; /* 让main-content区域占据剩余空间 */
-            padding: 20px;
-            font-size: 24px;
-        }
-        .content-section, .publication-section, .award-section, .application-section {
-            padding: 20px;
-            background-color: #fff;
-            margin-top: 20px;
-            box-sizing: border-box;
-        }
-        .content-section img, .publication-section img, .award-section img, .application-section img, .application-section video {
-            width: 100%;
-            height: auto;
-        }
-    </style>
-</head>
-<body>
-    <nav class="navbar">
-        <ul class="nav-menu">
-            <li class="nav-item"><a href="#" onclick="showContent('about')">About me</a></li>
-            <li class="nav-item"><a href="#" onclick="showContent('publication')">Publication</a></li>
-            <li class="nav-item"><a href="#" onclick="showContent('application')">Application</a></li>
-            <li class="nav-item"><a href="#" onclick="showContent('award')">Award</a></li>
-        </ul>
-    </nav>
-    <div class="image-gallery">
-        <img src="picture1.jpg" alt="Image 1">
-        <img src="picture2.jpg" alt="Image 2">
-        <img src="picture3.jpg" alt="Image 3">
-        <img src="picture4.jpg" alt="Image 4">
-    </div>
-    <div class="content-wrapper">
-        <aside class="left-sidebar">
-            <img src="picture5.png" alt="Profile Picture" style="width: 50%; border-radius: 50%;">
-            <h1>Pengfei Zhu
-<br>
-<br>
-pengfei.zhu.1@ulaval.ca
-<br>
-<br>
-Université Laval
-<br>
-<br>
-Exploring and Revealing the Secrets of Light.
-<br>
-<br>
-</h1>
-<h1 style="color: red;">If you are interested with my research, have questions, or want to cooperate, please feel free to contact with me! 
-</h1>
-<br>
-<br>
-            <img src="picture10.jpg" alt="Profile Picture" style="width: 50%; border-radius: 50%;">
-<h1 style="color: blue">
-Research Interests:
-<br>
-<br>
-Super-Resolution Imaging
-<br>
-<br>
-Signal/Image Processing
-<br>
-<br>
-Photothermal Tomography
-<br>
-<br>
-Terahertz Tomography
-<br>
-<br>
-Unsupervised Learning
-<br>
-<br>
-Fracture Mechanics Simulation
-<br>
-<br>
-Physical Light Simulation
-</h1>
-        </aside>
-        <section class="main-content">
-            <div id="about" class="content-section">
-                <h2>About me</h2>
-                <p>I am <strong>Pengfei Zhu</strong>, a PhD student in <a href="http://mivim.gel.ulaval.ca/?Lang=1">Multipolar Infrared Vision Vision Infrarouge Multipolaire (MIVIM)</a> (Lab of Canada Research Chair) and <a href="https://vision.gel.ulaval.ca/">Laboratoire de vision et Systèmes numèriques (CVSL)</a>, Université Laval, Quebec, Canada. My research interest includes InfRared Thermography, TeraHertz Time-Domain Spectroscopy, Photothermal Coherence Tomography, Non-Destructive Testing, Deep Learning, and Image Processing. I am also the reviewer of <strong>Quantitative Infrared Thermography Journal, Measurement, Optics Express, Applied Optics, Infrared Physics & Technology,</strong> etc.
-<br>
-<br>
-Now I am working with <strong> Prof. <a href="https://iid.ulaval.ca/en/members/xavier-maldague/">Xavier Maldague</a> (Supervisor) </strong> and <strong> Prof. <a href="https://homepage.hit.edu.cn/hzhang">Hai Zhang</a> (Co-Supervisor) </strong>.
-<br>
-<br>
-<img src="picture6.jpg" alt="Content Image">
-</p>
-<h2>Education</h2>
-<p><strong>2015-2019:</strong> Bachelor of Engineering, Engineering Mechanics, School of Aeronautics and Astronautics, the North University of China, China
-<br>
-<br>
-<strong>2019-2022:</strong> Master of Engineering, Mechanics, Faculty of Mechanical Engineering & Mechanics, Ningbo Univeristy, China
-<br>
-<br>
-<strong>2022-Now:</strong> Doctoral student, Electrical Engineering, Faculté des sciences et de génie, Université Laval, Canada</p>
-<br>
-<br>
-<h2>My academic profile</h2>
-<p><a href="https://scholar.google.ca/citations?user=QHZ6xpIAAAAJ&hl=en">Google Scholar</a>
-<br>
-<br>
-<a href="https://www.researchgate.net/profile/Pengfei-Zhu-22">ResearchGate</a>
-<br>
-<br>
-<a href="https://orcid.org/my-orcid?orcid=0000-0003-0431-1538">ORCID</a></p>
-            </div>
-            <div id="publication" class="publication-section" style="display:none;">
-                <h2>Publications</h2>
-                <img src="picture7.png" alt="Publication Image">
-                <p>[14] <strong>Pengfei Zhu</strong>, Hai Zhang*, Carlo Santulli, Stefano Sfarra, Rubén Usamentiaga, Vladimir P Vavilov, Xavier Maldague. Contactless and nondestructive evaluation of residual stress distribution in modified and pure HDPE materials using a novel terahertz method and line-scan thermographic technique. <i>Compos. Part A-Appl. S.</i> 183 (2024) 108220. <a href="https://www.sciencedirect.com/science/article/abs/pii/S1359835X24002173">[Link]</a>
-<br>
-<br>
-[13] <strong>Pengfei Zhu</strong>, Hai Zhang*, François Robitaille*, Xavier Maldague. Terahertz time-domain spectroscopy for the inspection of dry fibre preforms. <i>NDT & E Int.</i> 145 (2024) 103133. <a href="https://www.sciencedirect.com/science/article/pii/S0963869524000987">[Link]</a>
-<br>
-<br>
-[12] Guimin Jiang<sup>1</sup>, <strong>Pengfei Zhu<sup>1</sup></strong>, Yonggang Gai, Tingyi Jiang, Dazhi Yang, Stefano Sfarra, Thomas Waschkies, Ahmad Osman, Henrique Fernandes, Nicolas P Avdelidis, Xavier Maldague, Hai Zhang*. Non-invasive inspection for a hand-bound book of the 19th century: Numerical simulations and experimental analysis of infrared, terahertz, and ultrasonic methods. <i>Infrared Phys. Techn.</i> 140 (2024) 105353. <a href="https://www.sciencedirect.com/science/article/abs/pii/S1350449524002378">[Link]</a>
-<br>
-<br>
-[11] <strong>Pengfei Zhu</strong>, Hai Zhang*, Stefano Sfarra, Fabrizio Sarasini, Rubén Usamentiaga, Vladimir Vavilov, Clemente Ibarra-Castanedo, Xavier Maldague. Enhancing resistance to low-velocity impact of electrospun-manufactured interlayer-strengthened CFRP by using infrared thermography. <i>NDT & E Int.</i> 144 (2024) 103083. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0963869524000483">[Link]</a>
-<br>
-<br>
-[10] <strong>Pengfei Zhu</strong>, Rongbang Wang, Stefano Sfarra, Vladimir Vavilov, Xavier Maldague, Hai Zhang*. A novel force-temperature model for evaluating internal forces in CFRP by means of infrared thermography. <i>NDT & E Int.</i> 143 (2024) 103066. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0963869524000318">[Link]</a>
-<br>
-<br>
-[9] <strong>Pengfei Zhu</strong>, Hai Zhang*, Elena Pivarčiová, Stefano Sfarra, Xavier Maldague. The Detection of Moisture Content and the Delamination of Thermally Modified Woods Based on Terahertz Time-Domain Spectroscopy. <i>Engineering Proceedings</i> 51 (2023) 37. <a href="https://www.mdpi.com/2673-4591/51/1/37">[Link]</a>
-<br>
-<br>
-[8] <strong>Pengfei Zhu</strong>, Hai Zhang*, Carlo Santulli, Stefano Sfarra, Xavier Maldague. Evaluation of Residual Stress in Modified and Pure HDPE Materials Based on Thermal Diffusivity and Terahertz Phase Spectroscopy. <i>Engineering Proceedings</i> 51 (2023) 33. <a href="https://www.mdpi.com/2673-4591/51/1/33">[Link]</a>
-<br>
-<br>
-[7] <strong>Pengfei Zhu</strong>, Hai Zhang*, Elena Pivarčiová, Stefano Sfarra, Xavier Maldague. Characterization of water content and inspection of delamination in spruce, oak and meranti woods after pyrolysis processing using a new terahertz time-domain spectroscopy method. <i>NDT & E Int.</i> 139 (2023) 102938. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0963869523001536">[Link]</a>
-<br>
-<br>
-[6] <strong>P. Zhu</strong>, Z. Wei, O. Zahra, G. Marchais, P. Servais, T. Boulanger, X. Maldague*. Automated Defect Detection for Epoxy-Carbon Prepreg Laminates in Data Fusion Approach. <i>Conference of QIRT ASIA</i> 2023. <a href="http://qirt.gel.ulaval.ca/archives/qirt2023/papers/QIRT-ASIA-2023_paper_2.pdf">[Link]</a>
-<br>
-<br>
-[5] <strong>Pengfei Zhu</strong>, Dan Wu*, Yifan Wang, Zhifei Miao. Defect detectability based on square wave lock-in thermography. <i>Appl. Opt.</i> 61 (2022) 6134-6143. <a href="https://opg.optica.org/ao/abstract.cfm?uri=ao-61-21-6134">[Link]</a>
-<br>
-<br>
-[4] <strong>Pengfei Zhu</strong>, Dan Wu*, Lei Qian. Detection of defects in metallic materials using an improved post-processing method of pulsed thermography. <i>Opt. Laser. Eng.</i> 151 (2022) 106927. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0143816621003961">[Link]</a> 
-<br>
-<br>
-[3] <strong>Pengfei Zhu</strong>, Dan Wu*, Lingxiao Yin, Wei Han. Quantitative detection of defect size based on infrared thermography: temperature integral method. <i>Opt. Express</i> 30 (2022) 9119-9136. <a href="https://opg.optica.org/oe/fulltext.cfm?uri=oe-30-6-9119&id=470082">[Link]</a>
-<br>
-<br>
-[2] D. Wu*, L. Qian, <strong>P.F. Zhu</strong>. A novel micro-tensile system for full-field deformation measurement of thin films. <i>Rev. Sci. Instrum.</i> 92 (2021) 093901. <a href="https://pubs.aip.org/aip/rsi/article-abstract/92/9/093901/1030830/A-novel-micro-tensile-system-for-full-field?redirectedFrom=fulltext">[Link]</a>
-<br>
-<br>
-[1] Dan Wu*, Lei Qian, <strong>Pengfei Zhu</strong>. The distortion elimination of an optical microscope based on optimized windowed Fourier transform. <i>Precis. Eng.</i> 70 (2021) 124-134. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0141635921000404">[Link]</a>
-</p>
-            </div>
-            <div id="application" class="application-section" style="display:none;">
-                <h2>Applications</h2>
-                <p><strong>A. Photothermal Coherence Tomography</strong></p>
-                <video controls>
-                    <source src="video1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <p>Impact damage evaluation</p>
-                <video controls>
-                    <source src="video2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <p>Quantitative Defect Detection</p>
-                <p><strong>B. Residual Stress Measurement</strong></p>
-<img src="picture8.png" alt="Content Image">
-                <p><strong>C. Super-Resolution Imaging</strong></p>
-<img src="picture9.png" alt="Content Image">
-            </div>
-            <div id="award" class="award-section" style="display:none;">
-                <h2>Awards</h2>
-                <p>2023, Excellent Thesis of Zhejiang Province, China
-<br>
-<br>
-2022, Fellowship of oN DuTy Program, NSERC, Canada
-<br>
-<br>
-2022, China Scholarship Council scholarships
-<br>
-<br>
-2021-2022, Excellent Graduate, Excellent Thesis, Future Star, Research Star of Ningbo University <a href="https://mp.weixin.qq.com/s/ILTgUk5vtP1RKzsTUhmUqQ">[Link]</a>
-<br>
-<br>
-2021-2022, The First Prize of Academic Level Scholarship, Cao Guangbiao Scholarship, Wang Yajuan Scholarship, Excellent Scholarship of Ningbo University
-<br>
-<br>
-2020, The Second Prize of the 17th China Post-Graduate Mathematical Contest in Modeling
-</p>
-            </div>
-        </section>
-    </div>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pengfei Zhu | Academic Homepage</title>
 
-    <script>
-        function showContent(contentId) {
-            // Hide all sections
-            document.getElementById('about').style.display = 'none';
-            document.getElementById('publication').style.display = 'none';
-            document.getElementById('application').style.display = 'none';
-            document.getElementById('award').style.display = 'none';
-            
-            // Show the selected section
-            document.getElementById(contentId).style.display = 'block';
-        }
-    </script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f8fa;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      background: #1f2937;
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-menu {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-item a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 6px;
+    }
+
+    .nav-item a:hover {
+      background: #374151;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #111827, #374151);
+      color: white;
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 46px;
+      margin-bottom: 10px;
+    }
+
+    .hero h2 {
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 19px;
+    }
+
+    .image-gallery {
+      max-width: 1200px;
+      margin: 30px auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      padding: 0 20px;
+    }
+
+    .image-gallery img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .content-wrapper {
+      display: flex;
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+      gap: 30px;
+    }
+
+    .left-sidebar {
+      width: 280px;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      text-align: center;
+      height: fit-content;
+    }
+
+    .left-sidebar img.profile {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .left-sidebar h2 {
+      margin: 10px 0 5px;
+      font-size: 25px;
+    }
+
+    .left-sidebar p {
+      font-size: 15px;
+      margin: 8px 0;
+    }
+
+    .sidebar-section {
+      text-align: left;
+      margin-top: 25px;
+    }
+
+    .sidebar-section h3 {
+      font-size: 18px;
+      border-bottom: 2px solid #1f2937;
+      padding-bottom: 5px;
+    }
+
+    .sidebar-section ul {
+      padding-left: 18px;
+      font-size: 15px;
+    }
+
+    .main-content {
+      flex: 1;
+    }
+
+    .section {
+      background: white;
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+    }
+
+    .section h2 {
+      font-size: 30px;
+      margin-top: 0;
+      color: #111827;
+      border-bottom: 3px solid #1f2937;
+      padding-bottom: 8px;
+    }
+
+    .section h3 {
+      margin-top: 25px;
+      color: #374151;
+    }
+
+    .highlight {
+      background: #f1f5f9;
+      padding: 18px;
+      border-left: 5px solid #1f2937;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .pub {
+      margin-bottom: 18px;
+    }
+
+    .pub strong {
+      color: #111827;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e5e7eb;
+      padding: 5px 10px;
+      border-radius: 20px;
+      margin: 4px;
+      font-size: 14px;
+    }
+
+    a {
+      color: #1d4ed8;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    video, .section img {
+      width: 100%;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #1f2937;
+      color: white;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 900px) {
+      .content-wrapper {
+        flex-direction: column;
+      }
+
+      .left-sidebar {
+        width: auto;
+      }
+
+      .image-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="#about">About</a></li>
+      <li class="nav-item"><a href="#research">Research</a></li>
+      <li class="nav-item"><a href="#publications">Publications</a></li>
+      <li class="nav-item"><a href="#applications">Applications</a></li>
+      <li class="nav-item"><a href="#awards">Awards</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>Pengfei Zhu, Ph.D.</h1>
+    <h2>Adolf Martens Fellow | BAM Berlin</h2>
+    <p>
+      Scientific Machine Learning · Infrared Thermography · Terahertz Imaging ·
+      Non-Destructive Evaluation · Diffusion-Wave Physics
+    </p>
+  </header>
+
+  <div class="image-gallery">
+    <img src="picture1.jpg" alt="Research image 1">
+    <img src="picture2.jpg" alt="Research image 2">
+    <img src="picture3.jpg" alt="Research image 3">
+    <img src="picture4.jpg" alt="Research image 4">
+  </div>
+
+  <div class="content-wrapper">
+
+    <aside class="left-sidebar">
+      <img class="profile" src="picture5.png" alt="Pengfei Zhu">
+
+      <h2>Pengfei Zhu</h2>
+      <p><strong>Adolf Martens Fellow</strong></p>
+      <p>Federal Institute for Materials Research and Testing</p>
+      <p>BAM, Berlin, Germany</p>
+      <p>Email: pengfei.zhu.1@ulaval.ca</p>
+
+      <div class="sidebar-section">
+        <h3>Academic Profiles</h3>
+        <p><a href="https://scholar.google.ca/citations?user=QHZ6xpIAAAAJ&hl=en">Google Scholar</a></p>
+        <p><a href="https://www.researchgate.net/profile/Pengfei-Zhu-22">ResearchGate</a></p>
+        <p><a href="https://orcid.org/my-orcid?orcid=0000-0003-0431-1538">ORCID</a></p>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Research Keywords</h3>
+        <span class="tag">PINNs</span>
+        <span class="tag">Neural Operators</span>
+        <span class="tag">Photothermal</span>
+        <span class="tag">Terahertz</span>
+        <span class="tag">Theoretical Physics</span>
+        <span class="tag">Quantum Physics</span>
+        <span class="tag">Group Theory</span>
+        <span class="tag">Super-Resolution</span>
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+      <section id="about" class="section">
+        <h2>About Me</h2>
+
+        <p>
+          I am an Adolf Martens Fellow at the Federal Institute for Materials
+          Research and Testing (BAM), Berlin, Germany. I received my Ph.D. in
+          Electrical Engineering from Université Laval, Canada, under the
+          supervision of Prof. Xavier Maldague. I am Member of IEEE, SPIE, ASME, ASNT, and CINDE. I am Guest Editor for Journal of Applied Physics and Sensors Journal.
+        </p>
+
+        <p>
+          My research lies at the intersection of photothermal imaging, terahertz imaging,
+          AI for science, theoretical physics, quantum physics, inverse problems, and non-destructive
+          evaluation. I develop physics-informed learning methods and advanced
+          imaging techniques to reveal hidden structural, thermal, and material
+          information in complex systems.
+        </p>
+
+        <div class="highlight">
+          My current research focuses on virtual wave transform, physics-informed neural networks,
+          neural operators, photothermal, terahertz, quantum physics, heat transfer, and super-resolution imaging.
+        </div>
+
+        <h3>Education</h3>
+        <p><strong>2023–2025:</strong> Ph.D. in Electrical Engineering, Université Laval, Canada</p>
+        <p><strong>2019–2022:</strong> M.Eng. in Solid Mechanics, Ningbo University, China</p>
+        <p><strong>2015–2019:</strong> B.Eng. in Engineering Mechanics, North University of China, China</p>
+
+        <h3>Work experience</h3>
+        <p><strong>2026–now:</strong> Researcher in hBundesanstalt für Materialforschung und -prüfung (BAM), Germany</p>
+        <p><strong>2025–2025:</strong> Industrial Ph.D. in Sayona Inc., Canada</p>
+        <p><strong>2025–2025:</strong> Industrial Ph.D. in Nemaska Lithium Inc., Canada</p>
+        <p><strong>2023–2025:</strong> Industrial Ph.D. in Visooimage Inc., Canada</p>
+        <p><strong>2022–2023:</strong> Research Assistant in Harbin Institute of Technology, China</p>
+      </section>
+
+      <section id="research" class="section">
+        <h2>Research Interests</h2>
+
+        <h3>Scientific Machine Learning</h3>
+        <p>
+          Physics-informed neural networks, super-resolution networks,
+          Fourier neural operators, cross-physics neural operators, and AI for
+          scientific discovery.
+        </p>
+
+        <h3>Photothermal Imaging</h3>
+        <p>
+          Optical-excited thermography, structural-illumination imaging, thermal diffusivity measurement, vibrothermography,
+          and virtual wave imaging.
+        </p>
+
+        <h3>Terahertz Imaging and Spectroscopy</h3>
+        <p>
+          THz-TDS, terahertz tomography, material characterization,
+          super-resolution imaging, and molecular energy-level difference spectrum.
+        </p>
+
+        <h3>Diffusion-Wave Physics</h3>
+        <p>
+          Spectral-domain diffusion-wave theory, spectral lifting, group theory, unified operator theory,
+          spectral Snell’s law, and inverse problems in diffusive systems.
+        </p>
+      </section>
+
+      <section id="publications" class="section">
+        <h2>Selected Publications</h2>
+
+        <div class="pub">
+          <strong>Pengfei Zhu</strong> et al. Spectral-domain Snell’s law in diffusion-wave fields.
+          <em>arXiv</em>, 2026. <a class="paper-link"
+          href="https://doi.org/10.48550/arXiv.2603.24094"
+          target="_blank"> Link </a>
+        </div>
+
+        <div class="pub">
+          <strong>Pengfei Zhu</strong>, et al.
+          Three-dimensional wide-bandwidth quantum energy truncation terahertz coherence tomography.
+          <em>Physical Review Letters</em>, 2026. <a class="paper-link"
+          href="https://journals.aps.org/prl/accepted/10.1103/spsr-xr47"
+          target="_blank"> Link </a>
+        </div>
+
+        <div class="pub">
+          <strong>Pengfei Zhu</strong>, et al.
+          Frequency Multiplexed Photothermal Correlation Tomography for Non-Destructive Evaluation of Manufactured Materials.
+          <em>International Journal of Extreme Manufacturing</em>, 7, 035601, 2025. <a class="paper-link"
+          href="https://iopscience.iop.org/article/10.1088/2631-7990/ada837/meta"
+          target="_blank"> Link </a>
+        </div>
+
+        <div class="pub">
+          <strong>Pengfei Zhu</strong>, et al. THz-Super-Resolution Generative Adversarial Network: Deep-Learning-Based Super-Resolution Imaging Using              Terahertz Time-Domain Spectroscopy.
+          <em>IEEE Transactions on Industrial Informatics</em>, 21, 6660-6669, 2025. <a class="paper-link"
+          href="https://doi.org/10.1109/TII.2025.3567262"
+          target="_blank"> Link </a>
+        </div>
+
+        <div class="pub">
+          <strong>Pengfei Zhu</strong>, et al.
+          Contactless and nondestructive evaluation of residual stress distribution in modified and pure HDPE materials using a novel terahertz method and line-scan thermographic technique.
+          <em>Composites Part A: Applied Science and Manufacturing</em>, 183, 108220, 2024. <a class="paper-link"
+          href="https://doi.org/10.1016/j.compositesa.2024.108220"
+          target="_blank"> Link </a>
+        </div>
+
+        <p>
+          Full publication list:
+          <a href="https://scholar.google.ca/citations?user=QHZ6xpIAAAAJ&hl=en">
+            Google Scholar
+          </a>
+        </p>
+      </section>
+
+      <section id="applications" class="section">
+        <h2>Applications</h2>
+
+        <h3>Photothermal Coherence Tomography</h3>
+        <video controls>
+          <source src="video1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        <h3>Impact Damage Evaluation</h3>
+        <video controls>
+          <source src="video2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        <h3>Residual Stress Measurement</h3>
+        <img src="picture8.png" alt="Residual stress measurement">
+
+        <h3>Super-Resolution Imaging</h3>
+        <img src="picture9.png" alt="Super-resolution imaging">
+      </section>
+
+      <section id="awards" class="section">
+        <h2>Selected Honors and Awards</h2>
+
+        <p><strong>2025–Present:</strong> Adolf Martens Fellowship, Germany</p>
+        <p><strong>2025:</strong> FRQNT: Fonds de recherche du Québec – Nature et technologies</p>
+        <p><strong>2022:</strong> NSERC oN DuTy Fellowship, Canada</p>
+        <p><strong>2022:</strong> China Scholarship Council Scholarship</p>
+        <p><strong>2023:</strong> Excellent Thesis of Zhejiang Province, China</p>
+        <p><strong>2021–2022:</strong> Excellent Graduate, Excellent Thesis, Future Star, Research Star of Ningbo University</p>
+        <p><strong>2020:</strong> Second Prize, China Post-Graduate Mathematical Contest in Modeling</p>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    © 2026 Pengfei Zhu. All rights reserved.
+  </footer>
+
 </body>
 </html>
